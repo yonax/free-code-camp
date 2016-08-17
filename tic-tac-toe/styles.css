@@ -1,0 +1,199 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ddd;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.field, .menu {
+  overflow: hidden;
+  transition: max-height 300ms ease-in-out, opacity 300ms ease-in-out;
+  will-change: max-height, opacity;
+}
+
+.field {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 90vmin;
+  height: 90vmin;
+  max-height: 90vmin;
+}
+
+.menu {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  max-height: 90vmin;
+}
+
+.hidden {
+  max-height: 0;
+  opacity: 0;
+}
+
+.menu > p {
+  font-size: 5vmin;
+}
+
+.menu-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 90vmin;
+  height: 45vmin;
+}
+
+.menu-button {
+  width: calc(100% / 2);
+  height: 100%;
+  position: relative;
+  border-radius: 1vmin;
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  background-color: darkgrey;
+}
+
+.menu-button.o-sign:hover:after {
+  background-color: darkgrey !important;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0.5%;
+  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+
+  width: calc(100% / 3 - 1% - 2px);
+  height: calc(100% / 3 - 1% - 2px);
+
+  position: relative;
+  transform: scale(1);
+}
+
+.x-sign:after, .x-sign:before {
+  content: '';
+  position: absolute;
+
+  top: 10%; bottom: 10%;
+  left: 40%; right: 40%;
+
+  border-radius: 3vmin;
+  background-color: steelblue;
+}
+
+.x-sign:after {
+  transform: rotate(45deg);
+}
+.x-sign:before {
+  transform: rotate(-45deg);
+}
+
+.o-sign:before, .o-sign:after {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+}
+
+.o-sign:before {
+  top: 14%; bottom: 14%;
+  left: 14%; right: 14%;
+  background-color: maroon;
+}
+
+.o-sign:after {
+  top: 28%; bottom: 28%;
+  left: 28%; right: 28%;
+  background-color: #ddd;
+}
+
+.field.x-turn .cell:not(.taken):hover:after,
+.field.x-turn .cell:not(.taken):hover:before {
+  content: '';
+  position: absolute;
+
+  top: 10%; bottom: 10%;
+  left: 40%; right: 40%;
+
+  border-radius: 3vmin;
+  background-color: darkgrey;
+}
+.field.x-turn .cell:not(.taken):hover:after {
+  transform: rotate(45deg);
+}
+.field.x-turn .cell:not(.taken):hover:before {
+  transform: rotate(-45deg);
+}
+
+.field.o-turn .cell:not(.taken):hover:after,
+.field.o-turn .cell:not(.taken):hover:before {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+}
+.field.o-turn .cell:not(.taken):hover:before {
+  top: 14%; bottom: 14%;
+  left: 14%; right: 14%;
+  background-color: darkgrey;
+}
+.field.o-turn .cell:not(.taken):hover:after {
+  top: 28%; bottom: 28%;
+  left: 28%; right: 28%;
+  background-color: #ddd;
+}
+
+.o-sign.flash:after, .o-sign.flash:before {
+  animation: pulse 0.7s infinite ease-in-out alternate-reverse;
+}
+.x-sign.flash:after{
+  animation: pulse45 0.7s infinite ease-in-out alternate-reverse;
+}
+.x-sign.flash:before {
+  animation: pulse-45 0.7s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes pulse45 {
+  from {
+    transform: rotate(45deg) scale(1);
+  }
+  to {
+    transform: rotate(45deg) scale(1.1);
+  }
+}
+@keyframes pulse-45 {
+  from {
+    transform: rotate(-45deg) scale(1);
+  }
+  to {
+    transform: rotate(-45deg) scale(1.1);
+  }
+}

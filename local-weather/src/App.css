@@ -1,0 +1,33 @@
+.weather {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  font-size: 20vh;
+}
+.temp {
+  font-size: 10vh;
+}
+.location {
+  font-size: 4vh;
+}
+.detail {
+  font-size: 4vh;
+  margin-top: 5%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;;
+}
+.detail > div {
+  margin-left: 5vw;
+}
+.controls {
+  margin-top: 10%;
+  font-size: 4vh;
+  cursor: pointer;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}

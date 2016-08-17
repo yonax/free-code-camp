@@ -1,0 +1,64 @@
+@import 'https://fonts.googleapis.com/css?family=Baloo';
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
+.logo {
+  font-family: 'Baloo', cursive;
+  font-weight: 400;
+}
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.app svg {
+  flex: 1;
+}
+
+.btn {
+  cursor: pointer;
+  transition: fill 150ms;
+}
+
+.red-btn {
+  fill: #9f0f17;
+}
+.red-btn.active {
+  fill: #ff4c4c;
+}
+
+.blue-btn {
+  fill: #094a8f;
+}
+.blue-btn.active {
+  fill: #1c8cff;
+}
+
+.yellow-btn {
+  fill: #cca707;
+}
+.yellow-btn.active {
+  fill: #fed93f;
+}
+
+.green-btn {
+  fill: #00a74a;
+}
+.green-btn.active {
+  fill: #13ff7c;
+}
+
+.controls {
+  user-select: none;
+}
+
+.controls .btn:hover > circle {
+  fill: darkGrey;
+}
+.controls .btn:active > circle {
+  fill: orangered;
+}
+.controls .btn.active > circle {
+  fill: orangered;
+}

@@ -1,0 +1,97 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+}
+
+.calculator {
+  width: 70vmin;
+  height: 90vmin;
+  display: flex;
+  flex: 1;
+  flex-flow: column nowrap;
+}
+
+.output {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;;
+  align-items: stretch;;
+  margin-bottom: 20px;
+  font-size: 10vmin;
+  color: gainsboro;
+}
+
+.output div {
+  flex: 1;
+  text-align: right;
+  background: #000;
+}
+
+.output > .empty {
+  color: #000;  
+}
+
+.output > .value {
+  font-size: 4vmin;
+}
+
+.controls {
+  display: flex;
+  flex: 1;
+  flex-flow: row nowrap;
+}
+
+.numbers {
+  display: flex;
+  flex: 4;
+  flex-flow: column nowrap;
+}
+
+.operators {
+  display: flex;
+  flex: 1;
+  flex-flow: column nowrap;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  font-size: 6vmin;
+}
+
+.button {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  color: white;
+  position: relative;
+}
+
+.numbers {
+  background: steelblue;
+}
+
+.operators {
+  background: darkGrey;
+}
+
+.button:hover:after {
+  position: absolute;
+  content: '';
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+.button:active {
+  box-shadow:
+    inset 2px 2px 1px rgba(0, 0, 0, 0.25);
+}

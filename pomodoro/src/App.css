@@ -1,0 +1,67 @@
+@import url(https://fonts.googleapis.com/css?family=Denk+One);
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+
+* {
+  /*font-family: 'Denk One', sans-serif;*/
+  font-family: 'Nunito', sans-serif;
+}
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pomodoro-app {
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background: #fff;
+  border-radius: 15px;;
+  box-shadow: 7px 7px 6px 0 rgba(0,0,0, .25);
+}
+.pomodoro-app h2 {
+  margin: 0;
+  text-transform: capitalize;
+}
+.indicator circle {
+  transition: stroke-dashoffset 300ms ease-in-out,
+              transform 300ms ease-in-out,
+              opacity 300ms ease-in-out,
+              r 300ms ease-in-out;
+}
+.indicator text {
+  fill: #344050;
+}
+.indicator circle, .indicator path {
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.indicator .btn {
+  stroke: #fc6e6d;
+}
+.indicator path {
+  fill: none;
+}
+.inputs {
+  display: flex;
+  flex-flow: column nowrap;;
+  align-items: center;
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  transition: transform 300ms ease-in-out,
+              opacity 100ms ease-in-out;
+}
+.inputs.hidden {
+  transform: translateY(100vh) scale(0.3);
+  opacity: 0;
+}
+.inputs .number-input {
+  align-self: flex-start;
+}
+a {
+  color: black;
+}
